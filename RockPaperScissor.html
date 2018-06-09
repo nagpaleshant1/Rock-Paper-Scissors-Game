@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul
+{
+	list-style-type:none;
+}
+li
+{
+	display:block;
+	float:left;
+	width:33%;
+	height:40px;
+	text-align:center;
+	color:white;
+	background-color:#f4663f;
+	line-height:40px;
+	border-radius:10px;
+	font-size:20px;
+	font-weight:bold;
+}
+li:hover
+{
+	background-color:black;
+}
+table
+{
+	width:75%;
+	margin-left:10%;
+	margin-top:1%;
+}
+table,th,td{
+	border-collapse:collapse;
+}
+th{
+	width:50%;
+	color:green;
+	font-size:30px;
+	text-shadow:1.5px 1.5px 5px yellow;
+}
+h1
+{
+	color:purple;
+	font-size:60px;
+	text-align:center;
+	text-shadow:1.5px 1.5px 5px red;
+}
+span{
+	font-weight:bold;
+	margin-left:25%;
+	font-size:40px;
+	color:purple;
+	text-shadow:1.5px 1.5px 5px red;
+}
+td
+{
+	text-align:center;
+}
+</style>
+<script>
+var s1=0,s2=0;
+function decide(x)
+{
+	var y=Math.floor(Math.random()*3);
+	if(x==y)
+	{
+		document.getElementById("comp").innerHTML="Tied!";
+		document.getElementById("user").innerHTML="Tied!";
+		document.getElementById("s1").innerHTML=s1;
+		document.getElementById("s2").innerHTML=s2;
+	}
+	else if(x==0 && y==1)
+	{
+		document.getElementById("comp").innerHTML="";
+		document.getElementById("user").innerHTML="You Won!";
+		var c=document.getElementById("table");
+		var e=document.createElement("tr");
+		var a=document.createTextNode(0);
+		s1+=0;
+		var b=document.createElement("td");
+		b.appendChild(a);
+		e.appendChild(b);
+		a=document.createTextNode(1);
+		s2+=1;
+		var d=document.createElement("td");
+		d.appendChild(a);
+		var c=document.getElementById("table");
+		e.appendChild(d);
+		c.appendChild(e);
+		document.getElementById("s1").innerHTML=s1;
+		document.getElementById("s2").innerHTML=s2;
+	}
+	else if(x==0 && y==2)
+	{
+		document.getElementById("comp").innerHTML="You Won!";
+		document.getElementById("user").innerHTML="";
+		var c=document.getElementById("table");
+		var e=document.createElement("tr");
+		var a=document.createTextNode(1);
+		s1+=1;
+		var b=document.createElement("td");
+		b.appendChild(a);
+		e.appendChild(b);
+		a=document.createTextNode(0);
+		s2+=0;
+		var d=document.createElement("td");
+		d.appendChild(a);
+		var c=document.getElementById("table");
+		e.appendChild(d);
+		c.appendChild(e);
+		document.getElementById("s1").innerHTML=s1;
+		document.getElementById("s2").innerHTML=s2;
+	}
+	else if(x==1 && y==0)
+	{
+		document.getElementById("comp").innerHTML="";
+		document.getElementById("user").innerHTML="You Won!";
+		var c=document.getElementById("table");
+		var e=document.createElement("tr");
+		var a=document.createTextNode(0);
+		s1+=0;
+		var b=document.createElement("td");
+		b.appendChild(a);
+		e.appendChild(b);
+		a=document.createTextNode(1);
+		s2+=1;
+		var d=document.createElement("td");
+		d.appendChild(a);
+		var c=document.getElementById("table");
+		e.appendChild(d);
+		c.appendChild(e);
+		document.getElementById("s1").innerHTML=s1;
+		document.getElementById("s2").innerHTML=s2;
+	}
+	else if(x==1 && y==2)
+	{
+		document.getElementById("comp").innerHTML="You Won!";
+		document.getElementById("user").innerHTML="";
+		var c=document.getElementById("table");
+		var e=document.createElement("tr");
+		var a=document.createTextNode(1);
+		s1+=1;
+		var b=document.createElement("td");
+		b.appendChild(a);
+		e.appendChild(b);
+		a=document.createTextNode(0);
+		s2+=0;
+		var d=document.createElement("td");
+		d.appendChild(a);
+		var c=document.getElementById("table");
+		e.appendChild(d);
+		c.appendChild(e);
+		document.getElementById("s1").innerHTML=s1;
+		document.getElementById("s2").innerHTML=s2;
+	}
+	else if(x==2 && y==0)
+	{
+		document.getElementById("comp").innerHTML="You Won!";
+		document.getElementById("user").innerHTML="";
+		var c=document.getElementById("table");
+		var e=document.createElement("tr");
+		var a=document.createTextNode(1);
+		s1+=1;
+		var b=document.createElement("td");
+		b.appendChild(a);
+		e.appendChild(b);
+		a=document.createTextNode(0);
+		s2+=1;
+		var d=document.createElement("td");
+		d.appendChild(a);
+		var c=document.getElementById("table");
+		e.appendChild(d);
+		c.appendChild(e);
+		document.getElementById("s1").innerHTML=s1;
+		document.getElementById("s2").innerHTML=s2;
+	}
+	else if(x==2 && y==1)
+	{
+		document.getElementById("comp").innerHTML="";
+		document.getElementById("user").innerHTML="You Won!";
+		var c=document.getElementById("table");
+		var e=document.createElement("tr");
+		var a=document.createTextNode(0);
+		s1+=0;
+		var b=document.createElement("td");
+		b.appendChild(a);
+		e.appendChild(b);
+		a=document.createTextNode(1);
+		s2+=1;
+		var d=document.createElement("td");
+		d.appendChild(a);
+		var c=document.getElementById("table");
+		e.appendChild(d);
+		c.appendChild(e);
+		document.getElementById("s1").innerHTML=s1;
+		document.getElementById("s2").innerHTML=s2;
+	}
+}
+</script>
+</head>
+<body>
+<ul>
+<a href="#"><li onclick="decide(0)">Rock</li></a>
+<a href="#"><li onclick="decide(1)">Paper</li></a>
+<a href="#"><li onclick="decide(2)">Scissor</li></a>
+</ul><br><br>
+<h1>Score Board</h1>
+<div>
+<span id="comp">You won</span>
+<span id="user">You Won</span>
+</div>
+<table border=1 id="table">
+<tr>
+<th>Computer</th>
+<th>User</th>
+</tr>
+</table>
+<div>
+<span id="s1"></span>
+<span id="s2"></span>
+</body>
+</html>
